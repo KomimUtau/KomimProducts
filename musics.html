@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Müzik Galerisi</title>
+  <link rel="stylesheet" href="style.css">
+
+  <header>
+    <div class="banner">
+        <nav>
+          <a href="demo.html">Ana Sayfa</a>
+          <a href="projects.html">Projeler</a>
+          <a href="videos.html">Videolar</a>
+          <a href="musics.html">Müzikler</a>
+          <a href="blog.html">Blog</a>
+          <a href="contact.html">İletişim</a>
+        </nav>
+    </div>
+</header>
+  <style>
+    body {
+      margin: 0;
+      background-color: #ffadad;
+      color: white;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .main-player {
+      text-align: center;
+      padding: 30px 20px 10px;
+    }
+
+    audio {
+      width: 80%;
+      max-width: 700px;
+      margin: 20px 0;
+    }
+
+    .music-feed {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .music-card {
+      background-color: #1c1c1c;
+      width: 260px;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .music-card:hover {
+      transform: scale(1.03);
+    }
+
+    .music-thumb img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .music-info {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .music-info h3 {
+      font-size: 18px;
+      margin: 10px 0 5px;
+      color: #00ffe1;
+    }
+
+    .music-info p {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .duration {
+      font-size: 12px;
+      color: #888;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Üstteki oynatıcı -->
+  <div class="main-player">
+    <h2>Şu An Çalan</h2>
+    <h3 id="nowPlaying">Henüz seçilmedi</h3>
+    <audio id="audioPlayer" controls>
+      <source id="audioSource" src="" type="audio/mp3">
+      Tarayıcınız ses oynatmayı desteklemiyor.
+    </audio>
+  </div>
+
+  <!-- Müzik listesi -->
+  <div class="music-feed">
+
+    <div class="music-card" onclick="playMusic('music/superduckTRAILER.mp3', 'FOXPROOF Trailer')">
+      <div class="music-thumb">
+        <img src="images/foxproof_ost.png" alt="Yuck Theme">
+      </div>
+      <div class="music-info">
+        <h3>FOXPROOF Trailer</h3>
+        <p>Foxproof Soundtrack</p>
+        <div class="duration">01:32</div>
+      </div>
+    </div>
+
+    <div class="music-card" onclick="playMusic('music/titledemo.mp3', 'FOXPROOF Title')">
+      <div class="music-thumb">
+        <img src="images/foxproof_ost.png" alt="Yuck Theme">
+      </div>
+      <div class="music-info">
+        <h3>FOXPROOF Title Theme</h3>
+        <p>Foxproof Soundtrack</p>
+        <div class="duration">01:32</div>
+      </div>
+    </div>
+
+    <div class="music-card" onclick="playMusic('music/tilkyhillszone0.2.mp3', 'Tilky Hills')">
+      <div class="music-thumb">
+        <img src="images/foxproof_ost.png" alt="Yuck Theme">
+      </div>
+      <div class="music-info">
+        <h3>Foxy Hills</h3>
+        <p>Foxproof Soundtrack</p>
+        <div class="duration">01:32</div>
+      </div>
+    </div>
+
+    <div class="music-card" onclick="playMusic('music/butherefusedtostanddown.ogg', 'But He Refused to Stand Down')">
+      <div class="music-thumb">
+        <img src="images/lastomen_ost.png" alt="Quack March">
+      </div>
+      <div class="music-info">
+        <h3>But He Refused to Stand Down</h3>
+        <p>LASTOMEN OST</p>
+        <div class="duration">02:10</div>
+      </div>
+    </div>
+
+    <div class="music-card" onclick="playMusic('music/HEXAGONTHEREDEMPTIONIST.mp3', 'Heartbeats for Her')">
+      <div class="music-thumb">
+        <img src="images/lastomen_ost.png" alt="Quack March">
+      </div>
+      <div class="music-info">
+        <h3>Heartbeats for Her</h3>
+        <p>LASTOMEN OST</p>
+        <div class="duration">02:10</div>
+      </div>
+    </div>
+
+    <div class="music-card" onclick="playMusic('music/mus_dream.mp3', 'Dream')">
+      <div class="music-thumb">
+        <img src="images/lastomen_ost.png" alt="Quack March">
+      </div>
+      <div class="music-info">
+        <h3>Dream of Hans</h3>
+        <p>LASTOMEN OST</p>
+        <div class="duration">02:10</div>
+      </div>
+    </div>
+
+    <div class="music-card" onclick="playMusic('music/The Orb.mp3', 'The Orb')">
+      <div class="music-thumb">
+        <img src="images/lastomen_ost.png" alt="Quack March">
+      </div>
+      <div class="music-info">
+        <h3>The Orb</h3>
+        <p>LASTOMEN OST</p>
+        <div class="duration">02:10</div>
+      </div>
+    </div>
+
+    <div class="music-card" onclick="playMusic('music/ReadyForTrouble.mp3', 'ReadyForTrouble')">
+      <div class="music-thumb">
+        <img src="images/lastomen_ost.png" alt="Quack March">
+      </div>
+      <div class="music-info">
+        <h3>Ready For Trouble</h3>
+        <p>LASTOMEN OST</p>
+        <div class="duration">02:10</div>
+      </div>
+    </div>
+
+    <div class="music-card" onclick="playMusic('music/Really.mp3', 'Really')">
+      <div class="music-thumb">
+        <img src="images/lastomen_ost.png" alt="Quack March">
+      </div>
+      <div class="music-info">
+        <h3>Really?</h3>
+        <p>LASTOMEN OST</p>
+        <div class="duration">02:10</div>
+      </div>
+    </div>
+
+    <div class="music-card" onclick="playMusic('music/waterlands.mp3', 'Waterlands')">
+      <div class="music-thumb">
+        <img src="images/lastomen_ost.png" alt="Quack March">
+      </div>
+      <div class="music-info">
+        <h3>Waterlands</h3>
+        <p>LASTOMEN OST</p>
+        <div class="duration">02:10</div>
+      </div>
+    </div>
+
+    <div class="music-card" onclick="playMusic('music/your fate, your decision.mp3', 'yfyd')">
+      <div class="music-thumb">
+        <img src="images/lastomen_ost.png" alt="Quack March">
+      </div>
+      <div class="music-info">
+        <h3>Your Fate, Four Decision</h3>
+        <p>LASTOMEN OST</p>
+        <div class="duration">02:10</div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Yeni müzik için üstteki blok kopyalanabilir -->
+
+  </div>
+
+  <script>
+    function playMusic(src, title) {
+      const player = document.getElementById("audioPlayer");
+      const source = document.getElementById("audioSource");
+      const nowPlaying = document.getElementById("nowPlaying");
+
+      source.src = src;
+      player.load();
+      player.play();
+      nowPlaying.textContent = title;
+    }
+  </script>
+
+</body>
+</html>

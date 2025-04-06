@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Galerisi</title>
+  <link rel="stylesheet" href="style.css">
+
+  <header>
+    <div class="banner">
+        <nav>
+            <a href="demo.html">Ana Sayfa</a>
+            <a href="projects.html">Projeler</a>
+            <a href="videos.html">Videolar</a>
+            <a href="musics.html">Müzikler</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">İletişim</a>
+        </nav>
+    </div>
+</header>
+  <style>
+    body {
+      background-color: #b1e4cc;
+      color: white;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-video {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 540px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .video-feed {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .video-card {
+      width: 300px;
+      cursor: pointer;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .video-card:hover {
+      transform: scale(1.03);
+    }
+
+    .video-thumb img {
+      width: 100%;
+      display: block;
+    }
+
+    .video-info {
+      padding: 10px;
+    }
+
+    .video-info h3 {
+      margin: 0 0 5px;
+      font-size: 18px;
+      color: #00d1ff;
+    }
+
+    .video-info p {
+      font-size: 14px;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Büyük oynatıcı -->
+  <div class="main-video">
+    <iframe id="mainPlayer" src="https://www.youtube.com/embed/h81pqsfkPFw" allowfullscreen></iframe>
+  </div>
+
+  <!-- Video feed -->
+  <div class="video-feed">
+
+    <div class="video-card" onclick="changeVideo('2B1ttJLCB-0')">
+      <div class="video-thumb">
+        <img src="https://img.youtube.com/vi/2B1ttJLCB-0/hqdefault.jpg" alt="Video Thumbnail">
+      </div>
+      <div class="video-info">
+        <h3>FOXPROOF Fragman</h3>
+        <p>Yuck'ın tilki imparatorluğundaki destansı yolculuğu.</p>
+      </div>
+    </div>
+
+    <div class="video-card" onclick="changeVideo('Gh3Jdvf_PqM')">
+      <div class="video-thumb">
+        <img src="https://img.youtube.com/vi/Gh3Jdvf_PqM/hqdefault.jpg" alt="Video Thumbnail">
+      </div>
+      <div class="video-info">
+        <h3>LiminalS Playthrough</h3>
+        <p>LiminalS erken oynanış videosu.</p>
+      </div>
+    </div>
+
+    <div class="video-card" onclick="changeVideo('h81pqsfkPFw')">
+        <div class="video-thumb">
+          <img src="https://img.youtube.com/vi/h81pqsfkPFw/hqdefault.jpg" alt="Video Thumbnail">
+        </div>
+        <div class="video-info">
+          <h3>"Kek"</h3>
+          <p>Hans ve Emir Kek yapıyor!</p>
+        </div>
+      </div>
+
+    <!-- Yeni videolar için yukarıyı kopyala ve sadece video ID’leri ile açıklamaları değiştir -->
+
+  </div>
+
+  <script>
+    function changeVideo(videoId) {
+      const player = document.getElementById("mainPlayer");
+      player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    }
+  </script>
+
+</body>
+</html>
+
